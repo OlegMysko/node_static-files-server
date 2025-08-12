@@ -62,7 +62,11 @@ function createServer() {
         res.setHeader('Content-Type', 'text/plain');
         res.end('must be starts with /file');
       }
-    }
+    }else {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Welcome! To load a file, use /file/yourfilename');
+}
   });
 }
 
