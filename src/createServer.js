@@ -37,9 +37,13 @@ function createServer() {
         res.setHeader('Content-Type', 'text/plain');
         res.statusCode = 200;
         res.end(file);
+
+        return;
       } catch {
         res.statusCode = 404;
         res.end('dfdf');
+
+        return;
       }
     }
 
@@ -62,11 +66,11 @@ function createServer() {
         res.setHeader('Content-Type', 'text/plain');
         res.end('must be starts with /file');
       }
-    }else {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Welcome! To load a file, use /file/yourfilename');
-}
+    } else {
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'text/plain');
+      res.end('Welcome! To load a file, use /file/yourfilename');
+    }
   });
 }
 
